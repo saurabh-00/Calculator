@@ -1,0 +1,130 @@
+/* font */
+@import url("https://fonts.googleapis.com/css2?family=Graduate&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+}
+
+.calculator {
+  background: rgba(0, 0, 0, 0.1);
+  width: 400px;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  backdrop-filter: blur(30px);
+  box-shadow: 5px 5px 10px rgb(216, 221, 226);
+}
+
+/* Display */
+.calculator-display {
+  background: rgba(0, 0, 0, 0.1);
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+}
+
+.calculator-display h1 {
+  padding: 20px;
+  font-family: "Graduate", cursive;
+  font-size: 2rem;
+  font-weight: 100;
+  overflow-x: auto;
+}
+
+/* Custom Scroll Bar */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Buttons */
+.calculator-buttons {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+button {
+  min-height: 50px;
+  font-family: "Graduate", cursive;
+  font-size: 1rem;
+  font-weight: 100;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.01);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2), 0 -1px 2px rgba(0, 0, 0, 0.5);
+}
+
+button:hover {
+  filter: brightness(200%);
+}
+
+button:active {
+  transform: scale(0.9);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3), -3px -3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.operator {
+  background: rgba(0, 0, 0, 0.15);
+  color: white;
+  font-size: 1.5rem;
+}
+
+.operator:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.clear {
+  background: rgb(241, 47, 47);
+  color: white;
+}
+
+.clear:hover {
+  filter: brightness(150%);
+}
+
+.equal-sign {
+  grid-column: 4;
+  grid-row: 2 / span 4;
+  background: rgb(26, 182, 26);
+}
+
+.equal-sign:hover {
+  background: rgb(20, 145, 20);
+}
+
+/* Media Queries */
+@media screen and (max-width: 480px) {
+  .calculator {
+    width: 90%;
+  }
+}
